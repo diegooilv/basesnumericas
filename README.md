@@ -19,8 +19,8 @@ O projeto surgiu a partir de um debate sobre os conteúdos que mais nos chamaram
 
 ### Links:
 - **[Site na Netlify](https://basesnumericas.netlify.app/)**
-- **[Site na Cloudflare Pages](https://basesnumericas.pages.dev/)**
-- **[Site no Vercel Pages](https://basesnumericas.vercel.app/)**
+- **[Site na Cloudflare Pages](https://basesnumericas.pages.dev/)** -> Utiliza um repositório próprio! [/basesnumericas](https://github.com/DiegoOilv/basesnumericas)
+- **[Site no Vercel Pages](https://basesnumericas.vercel.app/)** 
 - **[Site no GitHub Pages](https://diegooilv.github.io/Projeto-Integrador/)**
 
 
