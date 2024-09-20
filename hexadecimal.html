@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reklame+Script&family=Poppins:wght@300;600&display=swap">
+    
+    <title>Números Hexadecimais</title>
+    <link rel="img/icon" href="logo.png" type="image/png">
+    
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+        @media(max-width: 720px){
+            #conteudoPrincipal h1 {
+                font-size: 35px
+            }
+            #conteudoPrincipal h2 {
+                display: flex;
+                text-align: center;
+                font-size: 28px;
+            }
+            #conteudoPrincipal h3 {
+            font-size: 22px;
+            }
+            #conteudoPrincipal h4 {
+            font-size: 20px;
+            }
+        }
+        @media(max-width: 500px){
+            #conteudoPrincipal h1 {
+                font-size: 33px
+            }
+            #conteudoPrincipal h2 {
+            font-size: 26px;
+            }
+            #conteudoPrincipal h3 {
+            font-size: 20px;
+            }
+            #conteudoPrincipal h4 {
+            font-size: 19px;
+            }
+        }
+    </style>
+        
+ 
+</head>
+
+<body>
+
+    <header>
+        <nav id="menu">
+            <img src="img/Logo-IFRS-branco-sem-fundo-horizontal.png" alt="Logotipo do IFRS" id="logo">     
+            <ul id="lista-menu">
+                <li class="lista-menu"><a href="#sobre">Sobre</a></li>
+                <li class="lista-menu"><a href="#referencias">Referências</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="menu-conteudos">
+            <ul id="menuMain">
+                <li class="linkMenuConteudos"><a href="decimal.html">Decimal</a></li>
+                <li class="linkMenuConteudos"><a href="binario.html">Binário</a></li>
+                <li class="linkMenuConteudos"><a href="octal.html">Octal</a></li>
+                <li class="linkMenuConteudos"><a href="hexadecimal.html">Hexadecimal</a></li>
+                <li class="linkMenuConteudos"><a href="calculadora.html">Calculadora</a></li>
+            </ul>
+        </section>
+        <hr>
+        <section id="conteudoPrincipal">
+            <h1>Sistema de Numeração Hexadecimal</h1>
+            <figure>
+                <img src="img/hexadecimal.png" alt="imagem ilustrativa sobre o sistema hexadecimal" id="imgInfo">
+            </figure>
+            <h2>O Que é o Sistema Hexadecimal?</h2>
+            <p>
+                O sistema de numeração hexadecimal, também conhecido como base 16, utiliza dezesseis símbolos diferentes para representar números: 
+                <strong>0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, D, E e F</strong>. Os símbolos de A a F representam os valores decimais de 10 a 15, respectivamente.
+            </p>
+            <p>Por exemplo, o número hexadecimal 2AF representa:</p>
+            <ul>
+                <li><strong>2 grupos de 256</strong> (2 × 16² = 512)</li>
+                <li><strong>10 grupos de 16</strong> (10 × 16¹ = 160)</li>
+                <li><strong>15 unidades</strong> (15 × 16⁰ = 15)</li>
+            </ul>
+            <p>Ao somarmos esses valores, temos 512 + 160 + 15 = 687 (em decimal).</p>
+
+            <h2>Características dos Números Hexadecimais</h2>
+            <p>
+                No sistema hexadecimal, cada dígito representa uma potência de 16, começando da direita para a esquerda, com a potência 0. Os números hexadecimais são amplamente utilizados na computação 
+                por serem uma forma compacta de representar números binários, já que cada dígito hexadecimal equivale a quatro dígitos binários.
+            </p>
+            <p>
+                A representação hexadecimal é útil porque permite uma leitura mais simplificada de grandes números binários, sendo comumente usada na representação de endereços de memória, cores em HTML/CSS, e instruções de baixo nível.
+            </p>
+
+            <h2>Leitura e Representação dos Números Hexadecimais</h2>
+            <p>
+                A leitura dos números hexadecimais segue a lógica de outros sistemas posicionais. Cada posição corresponde a uma potência de 16. 
+                Por exemplo, o número hexadecimal <strong>3E7</strong> é lido como:
+            </p>
+            <ul>
+                <li><strong>3 grupos de 256</strong> (3 × 16² = 768)</li>
+                <li><strong>14 grupos de 16</strong> (14 × 16¹ = 224)</li>
+                <li><strong>7 unidades</strong> (7 × 16⁰ = 7)</li>
+            </ul>
+            <p>
+                Ao somarmos esses valores, temos 768 + 224 + 7 = 999 (em decimal).
+            </p>
+
+            <h2>Operações com Números Hexadecimais</h2>
+            <p>
+                As operações matemáticas no sistema hexadecimal seguem regras semelhantes às do sistema decimal, mas com base 16. Abaixo estão exemplos de cada operação básica:
+            </p>
+            <h3>Adição e Subtração:</h3>
+            <p>
+                Alinhe os números pelas posições e adicione ou subtraia, lembrando-se de que a base é 16. Se um dígito exceder 15, carregue para a próxima posição.
+            </p>
+            <p>
+                <h4><strong>Exemplo:</strong><br></h4>
+                1A3 (hexadecimal)<br>
+                + 4C2 (hexadecimal)<br>
+                ------------<br>
+                665 (hexadecimal)
+            </p>
+
+            <h3>Multiplicação:</h3>
+            <p>
+                Multiplique os números normalmente e converta o resultado para base 16. Caso o resultado de um dígito seja maior que 15, converta para dígitos hexadecimais.
+            </p>
+            <p>
+                <h4><strong>Exemplo:</strong><br></h4>
+                2B (hexadecimal) × 7 (hexadecimal) = 139 (hexadecimal)
+            </p>
+
+            <h3>Divisão:</h3>
+            <p>
+                Divida como faria no sistema decimal, mas com base 16. O resultado será um quociente e um resto na base hexadecimal.
+            </p>
+            <p>
+                <h4><strong>Exemplo:</strong><br></h4>
+                1C8 (hexadecimal) ÷ 4 (hexadecimal) = 71 (hexadecimal)
+            </p>
+
+            <h2>Conexão com Outros Sistemas Numéricos</h2>
+            <p>
+                O sistema hexadecimal é frequentemente usado para representar números binários em uma forma mais legível e compacta, pois cada dígito hexadecimal 
+                corresponde a quatro dígitos binários. Isso facilita a leitura e a manipulação de grandes quantidades de dados em sistemas computacionais.
+            </p>
+
+            <h2>Aplicações no Cotidiano</h2>
+            <p>
+                O sistema hexadecimal é amplamente utilizado em:
+            </p>
+            <ul>
+                <li>Programação de baixo nível, como a manipulação de registros e endereços de memória.</li>
+                <li>Representação de cores em HTML/CSS, onde, por exemplo, #FF5733 representa uma cor específica.</li>
+                <li>Depuração de código-fonte e visualização de dados binários de maneira simplificada.</li>
+            </ul>
+
+            <h2>Exemplos Práticos</h2>
+            <ul>
+                <li><strong>Endereços de Memória:</strong> Em programação de baixo nível, os endereços de memória são frequentemente representados em hexadecimal para facilitar a leitura e a escrita.</li>
+                <li><strong>Representação de Cores:</strong> No desenvolvimento de sites, as cores são especificadas em hexadecimal. Por exemplo, o código #00FF00 representa a cor verde.</li>
+                <li><strong>Depuração:</strong> Ao depurar código, valores binários ou bytes são muitas vezes representados em hexadecimal para simplificar a visualização e comparação de valores.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 IFRS - Projeto Integrador I</p>
+    </footer>
+</body>
+</html>

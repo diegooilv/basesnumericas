@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reklame+Script&family=Poppins:wght@300;600&display=swap">
+    
+    <title>Números Binários</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
+    
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+        @media(max-width: 775px){
+            #conteudoPrincipal h1 {
+                font-size: 35px
+            }
+            #conteudoPrincipal h2 {
+                display: flex;
+                text-align: center;
+                font-size: 28px;
+            }
+            #conteudoPrincipal h3 {
+            font-size: 22px;
+            }
+            #conteudoPrincipal h4 {
+            font-size: 20px;
+            }
+        }
+        @media(max-width: 650px){
+            #conteudoPrincipal h1 {
+                font-size: 33px
+            }
+            #conteudoPrincipal h2 {
+            font-size: 26px;
+            }
+            #conteudoPrincipal h3 {
+            font-size: 20px;
+            }
+            #conteudoPrincipal h4 {
+            font-size: 19px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav id="menu">
+            <img src="img/Logo-IFRS-branco-sem-fundo-horizontal.png" alt="Logotipo do IFRS" id="logo">     
+            <ul id="lista-menu">
+                <li class="lista-menu"><a href="#sobre">Sobre</a></li>
+                <li class="lista-menu"><a href="#referencias">Referências</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="menu-conteudos">
+            <ul id="menuMain">
+                <li class="linkMenuConteudos"><a href="decimal.html">Decimal</a></li>
+                <li class="linkMenuConteudos"><a href="binario.html">Binário</a></li>
+                <li class="linkMenuConteudos"><a href="octal.html">Octal</a></li>
+                <li class="linkMenuConteudos"><a href="hexadecimal.html">Hexadecimal</a></li>
+                <li class="linkMenuConteudos"><a href="calculadora.html">Calculadora</a></li>
+            </ul>
+        </section>
+        <hr>
+        <section id="conteudoPrincipal">
+            <h1>Sistema de Numeração Binário</h1>
+            <figure>
+                <img src="img/binario.png" alt="imagem ilustrativa sobre o sistema binário" id="imgInfo">
+            </figure>
+            <h2>O Que é o Sistema Binário?</h2>
+            <p>
+                O sistema de numeração binário, também conhecido como base 2, é um sistema numérico utilizado principalmente em computação e eletrônica digital. 
+                Ele é composto apenas por dois dígitos: <strong>0</strong> e <strong>1</strong>. Cada dígito binário é chamado de <strong>bit</strong>.
+            </p>
+            <p>Por exemplo, o número binário <strong>101</strong> representa:</p>
+            <ul>
+                <li><strong>1 centena</strong> (1 × 2² = 4)</li>
+                <li><strong>0 dezenas</strong> (0 × 2¹ = 0)</li>
+                <li><strong>1 unidade</strong> (1 × 2⁰ = 1)</li>
+            </ul>
+            <p>Ao somarmos esses valores, temos 4 + 0 + 1 = 5 em decimal.</p>
+
+            <h2>Características dos Números Binários</h2>
+            <p>
+                Os números binários são utilizados para representar estados de dois valores, como ligado/desligado, verdadeiro/falso e alto/baixo. 
+                Cada posição em um número binário representa uma potência de 2, começando da direita para a esquerda. Por exemplo, no número binário 
+                <strong>1101</strong>, temos:
+            </p>
+            <ul>
+                <li><strong>1 × 2³ = 8</strong></li>
+                <li><strong>1 × 2² = 4</strong></li>
+                <li><strong>0 × 2¹ = 0</strong></li>
+                <li><strong>1 × 2⁰ = 1</strong></li>
+            </ul>
+            <p>Somando, temos 8 + 4 + 0 + 1 = 13 em decimal.</p>
+
+            <h2>Leitura e Representação dos Números Binários</h2>
+            <p>
+                A leitura dos números binários envolve a interpretação de cada posição como uma potência de 2. Cada dígito em um número binário indica se 
+                aquela potência de 2 deve ser incluída (1) ou não (0) na soma para determinar o valor decimal equivalente.
+            </p>
+            <p>Por exemplo, o número binário <strong>1010</strong> é lido como:</p>
+            <ul>
+                <li><strong>1 × 2³ = 8</strong></li>
+                <li><strong>0 × 2² = 0</strong></li>
+                <li><strong>1 × 2¹ = 2</strong></li>
+                <li><strong>0 × 2⁰ = 0</strong></li>
+            </ul>
+            <p>Somando, temos 8 + 0 + 2 + 0 = 10 em decimal.</p>
+
+            <h2>Operações com Números Binários</h2>
+            <p>
+                As operações matemáticas com números binários seguem regras específicas. Abaixo estão exemplos de cada operação básica:
+            </p>
+            <h3>Adição e Subtração:</h3>
+            <p>
+                A adição e subtração em binário seguem princípios similares ao decimal, mas com apenas os dígitos 0 e 1. Para a adição:
+            </p>
+            <ul>
+                <li><strong>0 + 0 = 0</strong></li>
+                <li><strong>0 + 1 = 1</strong></li>
+                <li><strong>1 + 0 = 1</strong></li>
+                <li><strong>1 + 1 = 10 (0 e vai 1 para a próxima casa)</strong></li>
+            </ul>
+            <p>
+                <h4><strong>Exemplo de Adição:</strong><br></h4>
+                1011<br>
+                + 1010<br>
+                ---------------<br>
+                10101<br>
+            </p>
+
+            <h3>Multiplicação:</h3>
+            <p>
+                Na multiplicação, os princípios são semelhantes aos da multiplicação decimal. Os números são multiplicados, e as somas parciais são alinhadas 
+                e somadas.
+            </p>
+            <p>
+                <h4><strong>Exemplo:</strong><br></h4>
+                101<br>
+                × 11<br>
+                ---------------<br>
+                101<br>
+                101<br>
+                ---------------<br>
+                1111<br>
+            </p>
+
+            <h3>Divisão:</h3>
+            <p>
+                A divisão em binário segue os mesmos princípios da divisão decimal, mas as operações são realizadas com 0 e 1.
+            </p>
+            <p>
+                <h4><strong>Exemplo:</strong><br></h4>
+                1010 ÷ 10 = 101 (equivalente a 10 ÷ 2 = 5)
+            </p>
+
+            <h2>Conexão com Outros Sistemas Numéricos</h2>
+            <p>
+                O sistema binário é a base para o funcionamento dos sistemas digitais e pode ser convertido para outros sistemas numéricos como o decimal, octal e hexadecimal. 
+                É amplamente utilizado em computadores e dispositivos eletrônicos para representar dados e instruções.
+            </p>
+
+            <h2>Aplicações no Cotidiano</h2>
+            <p>
+                O sistema binário é fundamental para o funcionamento de tecnologias modernas. Algumas de suas aplicações incluem:
+            </p>
+            <ul>
+                <li>Representação de dados em computadores.</li>
+                <li>Codificação de instruções de máquina para processadores.</li>
+                <li>Armazenamento e transmissão de informações digitais.</li>
+            </ul>
+            <p>
+                Compreender o sistema binário é essencial para aqueles que trabalham com computação, eletrônica e áreas afins, pois ele serve como a base 
+                para quase todas as operações digitais.
+            </p>
+
+            <h2>Exemplos Práticos</h2>
+            <ul>
+                <li><strong>Computação:</strong> Todo dado em um computador é armazenado e processado em formato binário.</li>
+                <li><strong>Codificação de Imagens:</strong> As imagens digitais são formadas por bits que representam cores e intensidades.</li>
+                <li><strong>Redes de Comunicação:</strong> Os dados transmitidos entre dispositivos são codificados em binário.</li>
+            </ul>
+            
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 IFRS - Projeto Integrador I</p>
+    </footer>
+</body>
+</html>

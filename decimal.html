@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reklame+Script&family=Poppins:wght@300;600&display=swap">
+    
+    <title>Números Decimais</title>
+    <link rel="img/icon" href="logo.png" type="image/png">
+    
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+        @media(max-width: 775px){
+            #conteudoPrincipal h1 {
+                font-size: 35px
+            }
+            #conteudoPrincipal h2 {
+                display: flex;
+                text-align: center;
+                font-size: 28px;
+            }
+            #conteudoPrincipal h3 {
+            font-size: 22px;
+            }
+            #conteudoPrincipal h4 {
+            font-size: 20px;
+            }
+        }
+        @media(max-width: 650px){
+            #conteudoPrincipal h1 {
+                font-size: 33px
+            }
+            #conteudoPrincipal h2 {
+            font-size: 26px;
+            }
+            #conteudoPrincipal h3 {
+            font-size: 20px;
+            }
+            #conteudoPrincipal h4 {
+            font-size: 19px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <nav id="menu">
+            <img src="img/Logo-IFRS-branco-sem-fundo-horizontal.png" alt="Logotipo do IFRS" id="logo">     
+            <ul id="lista-menu">
+                <li class="lista-menu"><a href="#sobre">Sobre</a></li>
+                <li class="lista-menu"><a href="#referencias">Referências</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="menu-conteudos">
+            <ul id="menuMain">
+                <li class="linkMenuConteudos"><a href="decimal.html">Decimal</a></li>
+                <li class="linkMenuConteudos"><a href="binario.html">Binário</a></li>
+                <li class="linkMenuConteudos"><a href="octal.html">Octal</a></li>
+                <li class="linkMenuConteudos"><a href="hexadecimal.html">Hexadecimal</a></li>
+                <li class="linkMenuConteudos"><a href="calculadora.html">Calculadora</a></li>
+            </ul>
+        </section>
+        <hr>
+        <section id="conteudoPrincipal">
+            <h1>Sistema de Numeração Decimal</h1>
+            <figure>
+                <img src="img/decimal.png" alt="Logotipo de Tecnologia da Informação" id="imgInfo">
+            </figure>
+            <h2>O Que é o Sistema Decimal?</h2>
+            <p>
+                O sistema de numeração decimal, também conhecido como base 10, é o sistema numérico mais comum e utilizado em nosso dia a dia. 
+                Ele é composto por dez dígitos: <strong>0, 1, 2, 3, 4, 5, 6, 7, 8 e 9</strong>. A cada novo número, a posição dos dígitos 
+                determina seu valor, e esse valor é multiplicado por potências de 10.
+            </p>
+            <p>Por exemplo, o número 345 representa:</p>
+            <ul>
+                <li><strong>3 centenas</strong> (3 × 10² = 300)</li>
+                <li><strong>4 dezenas</strong> (4 × 10¹ = 40)</li>
+                <li><strong>5 unidades</strong> (5 × 10⁰ = 5)</li>
+            </ul>
+            <p>Ao somarmos esses valores, temos 300 + 40 + 5 = 345.</p>
+
+        <h2>Características dos Números Decimais</h2>
+        <p>
+            Os números decimais podem ser classificados como <strong>inteiros</strong> ou <strong>fracionários</strong>. 
+            Um número inteiro não possui parte decimal e pode ser positivo ou negativo, como <strong>-3, 0</strong> e <strong>25</strong>. 
+            Já os números fracionários, também chamados de decimais, possuem uma parte inteira e uma parte decimal, separadas por uma 
+            vírgula, como <strong>3,14</strong> ou <strong>-0,75</strong>.
+        </p>
+        <p>
+            As <strong>casas decimais</strong> indicam a precisão do número após a vírgula. Quanto mais casas decimais, maior a precisão do valor representado.
+        </p>
+
+        <h2>Leitura e Representação dos Números Decimais</h2>
+        <p>
+            A leitura dos números decimais envolve separar a parte inteira da parte decimal. A parte inteira está à esquerda da vírgula e a 
+            parte decimal, à direita. Os valores após a vírgula são lidos de acordo com suas posições:
+        </p>
+        <ul>
+            <li><strong>0,1</strong>: um décimo</li>
+            <li><strong>0,01</strong>: um centésimo</li>
+            <li><strong>0,001</strong>: um milésimo</li>
+        </ul>
+        <p>Se combinarmos esses valores, temos exemplos como:</p>
+        <ul>
+            <li><strong>2,45</strong>: dois inteiros e quarenta e cinco centésimos.</li>
+            <li><strong>0,678</strong>: seiscentos e setenta e oito milésimos.</li>
+        </ul>
+
+        <h2>Operações com Números Decimais</h2>
+        <p>
+            Para realizar operações matemáticas com números decimais, é necessário alinhar os números de acordo com a vírgula. Abaixo estão exemplos de cada operação básica:
+        </p>
+        <h3>Adição e Subtração:</h3>
+        <p>
+            Alinhe os números pela vírgula. Adicione ou subtraia normalmente, considerando as casas decimais.
+        </p>
+            <p>
+                <h4><strong>Exemplo:</strong><br></h4>
+                12,35<br>
+                + 8,47<br>
+                ------------
+                <br>20,82
+            </p>
+
+        <h3>Multiplicação:</h3>
+        <p>
+            Ignore a vírgula inicialmente e multiplique como se fossem inteiros. Após a multiplicação, conte o total de casas decimais nos 
+            números originais e coloque a vírgula no resultado final com o mesmo número de casas.
+        </p>
+        
+            <p>
+                <h4><strong>Exemplo:</strong><br></h4>
+                1,5 (1 casa decimal)<br>
+                × 2,3 (1 casa decimal)<br>
+                ------------
+                <br>3,45 (2 casas decimais no resultado)
+            </p>
+
+        <h3>Divisão:</h3>
+        <p>
+            Desloque a vírgula no divisor e no dividendo até que o divisor se torne um número inteiro. Divida normalmente.
+        </p>
+       
+            <p>
+                <h4><strong>Exemplo:</strong><br></h4>
+                6,25 ÷ 2,5 = 6,25 ÷ 25 = 2,5
+            </p>
+
+        <h2>Conexão com Outros Sistemas Numéricos</h2>
+        <p>
+            O sistema decimal é a base para outros sistemas numéricos, como o binário, octal e hexadecimal. Todos os números nesses sistemas 
+            podem ser convertidos para decimal, tornando-o uma referência fundamental para entender e trabalhar com diferentes bases.
+        </p>
+
+        <h2>Aplicações no Cotidiano</h2>
+        <p>
+            O sistema decimal está presente em quase todas as áreas da vida cotidiana:
+        </p>
+        <ul>
+            <li>Em finanças e economia, usamos valores decimais para representar dinheiro.</li>
+            <li>Na medição de distância, peso e temperatura.</li>
+            <li>Na ciência e tecnologia, para representar dados com precisão.</li>
+        </ul>
+        <p>
+            Compreender o sistema decimal é essencial para lidar com situações cotidianas e realizar operações básicas e avançadas em matemática e ciências.
+        </p>
+
+        <h2>Exemplos Práticos</h2>
+        <ul>
+            <li><strong>Dinheiro:</strong> R$ 15,75 representa quinze reais e setenta e cinco centavos.</li>
+            <li><strong>Medidas:</strong> 1,75 m significa um metro e setenta e cinco centímetros.</li>
+            <li><strong>Temperatura:</strong> 36,5 °C indica trinta e seis graus e meio.</li>
+        </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 IFRS - Projeto Integrador I</p>
+    </footer>
+</body>
+</html>

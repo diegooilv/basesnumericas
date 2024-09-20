@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reklame+Script&family=Poppins:wght@300;600&display=swap">
+    
+    <title>Números Octais</title>
+    <link rel="icon" href="img/logo.png" type="image/png">
+    
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+        @media(max-width: 720px){
+            #conteudoPrincipal h1 {
+                font-size: 35px
+            }
+            #conteudoPrincipal h2 {
+                display: flex;
+                text-align: center;
+                font-size: 28px;
+            }
+            #conteudoPrincipal h3 {
+            font-size: 22px;
+            }
+            #conteudoPrincipal h4 {
+            font-size: 20px;
+            }
+        }
+        @media(max-width: 630px){
+            #conteudoPrincipal h1 {
+                font-size: 33px
+            }
+            #conteudoPrincipal h2 {
+            font-size: 26px;
+            }
+            #conteudoPrincipal h3 {
+            font-size: 20px;
+            }
+            #conteudoPrincipal h4 {
+            font-size: 19px;
+            }
+        }
+    </style>
+        
+ 
+</head>
+
+<body>
+
+    <header>
+        <nav id="menu">
+            <img src="img/Logo-IFRS-branco-sem-fundo-horizontal.png" alt="Logotipo do IFRS" id="logo">     
+            <ul id="lista-menu">
+                <li class="lista-menu"><a href="#sobre">Sobre</a></li>
+                <li class="lista-menu"><a href="#referencias">Referências</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="menu-conteudos">
+            <ul id="menuMain">
+                <li class="linkMenuConteudos"><a href="decimal.html">Decimal</a></li>
+                <li class="linkMenuConteudos"><a href="binario.html">Binário</a></li>
+                <li class="linkMenuConteudos"><a href="octal.html">Octal</a></li>
+                <li class="linkMenuConteudos"><a href="hexadecimal.html">Hexadecimal</a></li>
+                <li class="linkMenuConteudos"><a href="calculadora.html">Calculadora</a></li>
+            </ul>
+        </section>
+        <hr>
+        <section id="conteudoPrincipal">
+            <h1>Sistema de Numeração Octal</h1>
+            <figure>
+                <img src="img/octal.png" alt="imagem ilustrativa sobre o sistema octal" id="imgInfo">
+            </figure>
+            
+            <h2>O Que é o Sistema Octal?</h2>
+            <p>
+                O sistema de numeração octal, também conhecido como base 8, utiliza oito dígitos diferentes: <strong>0, 1, 2, 3, 4, 5, 6 e 7</strong>. 
+                Ele é amplamente utilizado em computação, especialmente em sistemas que precisam representar dados de maneira compacta.
+            </p>
+            <p>Por exemplo, o número octal 345 representa:</p>
+            <ul>
+                <li><strong>3 grupos de 64</strong> (3 × 8² = 192)</li>
+                <li><strong>4 grupos de 8</strong> (4 × 8¹ = 32)</li>
+                <li><strong>5 unidades</strong> (5 × 8⁰ = 5)</li>
+            </ul>
+            <p>Ao somarmos esses valores, temos 192 + 32 + 5 = 229 (em decimal).</p>
+
+            <h2>Características dos Números Octais</h2>
+            <p>
+                No sistema octal, cada dígito representa uma potência de 8, começando da direita para a esquerda, com a potência 0. Os números octais são frequentemente usados em programação 
+                e em sistemas digitais para representar valores de uma forma mais concisa em comparação ao sistema binário.
+            </p>
+            <p>
+                A representação octal é útil porque converte cada grupo de três bits em um único dígito octal, facilitando a leitura e a manipulação dos dados em níveis mais baixos de computação.
+            </p>
+
+            <h2>Leitura e Representação dos Números Octais</h2>
+            <p>
+                A leitura dos números octais é semelhante à de outros sistemas posicionais. Cada posição corresponde a uma potência de 8. 
+                Por exemplo, o número octal <strong>712</strong> é lido como:
+            </p>
+            <ul>
+                <li><strong>7 grupos de 64</strong> (7 × 8² = 448)</li>
+                <li><strong>1 grupo de 8</strong> (1 × 8¹ = 8)</li>
+                <li><strong>2 unidades</strong> (2 × 8⁰ = 2)</li>
+            </ul>
+            <p>
+                Ao somarmos esses valores, temos 448 + 8 + 2 = 458 (em decimal).
+            </p>
+
+            <h2>Operações com Números Octais</h2>
+            <p>
+                As operações matemáticas no sistema octal seguem regras semelhantes às do sistema decimal, mas com base 8. Abaixo estão exemplos de cada operação básica:
+            </p>
+            <h3>Adição e Subtração:</h3>
+            <p>
+                Alinhe os números pelas posições e adicione ou subtraia, lembrando-se de que a base é 8. Se um dígito exceder 7, carregue para a próxima posição.
+            </p>
+            <p>
+                <h4><strong>Exemplo:</strong><br></h4>
+                127 (octal)<br>
+                + 351 (octal)<br>
+                ------------<br>
+                500 (octal)
+            </p>
+
+            <h3>Multiplicação:</h3>
+            <p>
+                Multiplique os números normalmente e converta o resultado para base 8. Caso o resultado de um dígito seja maior que 7, converta para dígitos octais.
+            </p>
+            <p>
+                <h4><strong>Exemplo:</strong><br></h4>
+                12 (octal) × 7 (octal) = 102 (octal)
+            </p>
+
+            <h3>Divisão:</h3>
+            <p>
+                Divida como faria no sistema decimal, mas com base 8. O resultado será um quociente e um resto na base octal.
+            </p>
+            <p>
+                <h4><strong>Exemplo:</strong><br></h4>
+                65 (octal) ÷ 3 (octal) = 21 (octal) com resto 2
+            </p>
+
+            <h2>Conexão com Outros Sistemas Numéricos</h2>
+            <p>
+                O sistema octal é comumente usado como uma representação intermediária entre os sistemas binário e hexadecimal, pois cada dígito octal corresponde 
+                exatamente a três dígitos binários. Por isso, é útil em diversas aplicações de engenharia e computação.
+            </p>
+
+            <h2>Aplicações no Cotidiano</h2>
+            <p>
+                Embora menos comum no dia a dia em comparação com o sistema decimal, o sistema octal tem aplicações importantes em:
+            </p>
+            <ul>
+                <li>Programação de sistemas embarcados e eletrônicos.</li>
+                <li>Representação de permissões de arquivos em sistemas Unix/Linux.</li>
+                <li>Facilidade de conversão entre sistemas binário e octal em processos computacionais.</li>
+            </ul>
+
+            <h2>Exemplos Práticos</h2>
+            <ul>
+                <li><strong>Permissões de Arquivos:</strong> Em sistemas Unix/Linux, as permissões de arquivos são frequentemente representadas em octal. Por exemplo, 755 representa permissões completas para o proprietário e leitura/execução para outros usuários.</li>
+                <li><strong>Representação Binária:</strong> O número binário 110101 pode ser rapidamente convertido para o octal 65.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 IFRS - Projeto Integrador I</p>
+    </footer>
+</body>
+</html>
