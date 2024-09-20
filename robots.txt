@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://basesnumericas.pages.dev/sitemap.xml
