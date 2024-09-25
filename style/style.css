@@ -47,10 +47,6 @@ header {
 #logo:active {
     transform: scale(1.1);
 }
-
-
-
-
 #menuMain {
     list-style: none;
     width: 100%;
@@ -58,13 +54,20 @@ header {
     height: auto;
     display: flex;
     justify-content: space-between;
-    margin: 0;
+    margin: 2px 0 2px 0;
     padding: 0;
     flex-wrap: wrap;
 }
+
+hr {
+    border: 1px solid green;
+    margin: 0;
+}
+
 #menu-conteudos {
     margin: 0 10px 0 10px;
 }
+
 #menuMain a {
     padding: 5px;
     font-family: 'Poppins', sans-serif;
@@ -73,8 +76,8 @@ header {
     justify-content: space-between;
     color: #00510f;
     font-size: 25px;
-
 }
+
 #menuMain a:hover {
     color: #52c268; 
     cursor: pointer;
@@ -95,8 +98,8 @@ header {
     font-size: 50px;
     margin: 0;
     font-family: 'Reklame Script', cursive;
-    
 }
+
 #conteudoPrincipal h2 {
     display: flex;
     text-align: center;
@@ -104,6 +107,7 @@ header {
     font-size: 40px;
     font-family: 'Reklame Script', cursive;;
 }
+
 #conteudoPrincipal h3 {
     display: flex;
     text-align: center;
@@ -111,33 +115,39 @@ header {
     font-size: 32px;
     font-family: 'Reklame Script', cursive;;
 }
+
 #conteudoPrincipal h4 {
     display: flex;
     text-align: center;
     margin: 0;
     font-size: 24px;
     font-family: 'Reklame Script', cursive;
-    
 }
+
 #imgInfo {
     height: 200px;
     width: auto;
 }
+
 #conteudoPrincipal p {
     margin: 0 10px 0 10px;
     font-family: 'Merriweather', serif;
     text-align: center;
 }
+
 #p1 {
     font-size: 20px;
 }
+
 .conteudo {
     font-size: 18px;
 }
+
 #conteudoPrincipal a {
     text-decoration: none;
     color:#00510f
 }
+
 #conteudoPrincipal a:hover {
     color: #52c268; 
     cursor: pointer;
@@ -147,15 +157,18 @@ p {
     font-size: 18px;
     font-family: Arial, Helvetica, sans-serif;
 }
+
 footer {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 footer p {
     font-family: 'Lato', sans-serif;
     color:#00510f
 }
+
 @media (max-width: 645px) {
     #logo {
         content: url('../img/Logo-IFRS-branco-sem-fundo-Vertical.png');
@@ -163,7 +176,6 @@ footer p {
     #menuMain {
         justify-content: center;
     }
-
 }
 
  @media(max-width: 550px){
@@ -171,6 +183,7 @@ footer p {
         font-size: 35px;
     } 
  }
+
 @media (max-width: 460px) {
     
     .lista-menu a {
@@ -181,7 +194,6 @@ footer p {
         width: auto;
     }
     
-    
  }
  
 @media (max-width: 340px){
@@ -190,3 +202,6 @@ footer p {
     }
  }
 
+ footer p {
+    font-size: 10px;
+ }
