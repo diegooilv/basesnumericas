@@ -146,83 +146,85 @@
         <p>&copy; 2024 IFRS - Projeto Integrador I</p>
     </footer>
     <script>
-        
-        function isBinario(valor) {
-            return /^[01]+$/.test(valor);
+            function isBinario(valor) {
+        return /^-?[01]+$/.test(valor);  
+    }
+
+    function isOctal(valor) {
+        return /^-?[0-7]+$/.test(valor);  
+    }
+
+    function isDecimal(valor) {
+        return /^-?[0-9]+$/.test(valor);  
+    }
+
+    function isHexadecimal(valor) {
+        return /^-?[0-9a-fA-F]+$/.test(valor);  
+    }
+
+    function converterParaBase(decimal, baseDestino) {
+        switch(baseDestino) {
+            case "binario":
+                return (decimal < 0 ? "-" : "") + Math.abs(decimal).toString(2);
+            case "octal":
+                return (decimal < 0 ? "-" : "") + Math.abs(decimal).toString(8);
+            case "decimal":
+                return decimal.toString(10);
+            case "hexadecimal":
+                return (decimal < 0 ? "-" : "") + Math.abs(decimal).toString(16);
+            default:
+                return null;
+        }
+    }
+
+    function converter() {
+        const numero = document.getElementById("numero").value;
+        const baseOrigem = document.getElementById("baseOrigem").value;
+        const baseDestino = document.getElementById("baseDestino").value;
+        let decimal;
+
+        if (baseOrigem === baseDestino) {
+            document.getElementById("resultado").value = "Erro: As bases de origem e destino são iguais.";
+            return;
         }
 
-        function isOctal(valor) {
-            return /^[0-7]+$/.test(valor);
-        }
-
-        function isDecimal(valor) {
-            return /^[0-9]+$/.test(valor);
-        }
-
-        function isHexadecimal(valor) {
-            return /^[0-9a-fA-F]+$/.test(valor);
-        }  
-        function converterParaBase(decimal, baseDestino) {
-            switch(baseDestino) {
-                case "binario":
-                    return decimal.toString(2);
-                case "octal":
-                    return decimal.toString(8);
-                case "decimal":
-                    return decimal.toString(10);
-                case "hexadecimal":
-                    return decimal.toString(16);
-                default:
-                    return null;
-            }
-        } 
-        function converter() {
-            const numero = document.getElementById("numero").value;
-            const baseOrigem = document.getElementById("baseOrigem").value;
-            const baseDestino = document.getElementById("baseDestino").value;
-            let decimal;
-
-            
-            if (baseOrigem === baseDestino) {
-                document.getElementById("resultado").value = "Erro: As bases de origem e destino são iguais.";
-                return;
-            }  
-            switch(baseOrigem) {
-                case "binario":
-                    if (!isBinario(numero)) {
-                        document.getElementById("resultado").value = "Erro: O número inserido não é binário.";
-                        return;
-                    }
-                    decimal = parseInt(numero, 2);
-                    break;
-                case "octal":
-                    if (!isOctal(numero)) {
-                        document.getElementById("resultado").value = "Erro: O número inserido não é octal.";
-                        return;
-                    }
-                    decimal = parseInt(numero, 8);
-                    break;
-                case "decimal":
-                    if (!isDecimal(numero)) {
-                        document.getElementById("resultado").value = "Erro: O número inserido não é decimal.";
-                        return;
-                    }
-                    decimal = parseInt(numero, 10);
-                    break;
-                case "hexadecimal":
-                    if (!isHexadecimal(numero)) {
-                        document.getElementById("resultado").value = "Erro: O número inserido não é hexadecimal.";
-                        return;
-                    }
-                    decimal = parseInt(numero, 16);
-                    break;
-                default:
-                    document.getElementById("resultado").value = "Erro: Base de origem inválida.";
+        switch(baseOrigem) {
+            case "binario":
+                if (!isBinario(numero)) {
+                    document.getElementById("resultado").value = "Erro: O número inserido não é binário.";
                     return;
-            } 
-            const resultado = converterParaBase(decimal, baseDestino);
-            document.getElementById("resultado").value = resultado;
+                }
+                decimal = parseInt(numero, 2);
+                break;
+            case "octal":
+                if (!isOctal(numero)) {
+                    document.getElementById("resultado").value = "Erro: O número inserido não é octal.";
+                    return;
+                }
+                decimal = parseInt(numero, 8);
+                break;
+            case "decimal":
+                if (!isDecimal(numero)) {
+                    document.getElementById("resultado").value = "Erro: O número inserido não é decimal.";
+                    return;
+                }
+                decimal = parseInt(numero, 10);
+                break;
+            case "hexadecimal":
+                if (!isHexadecimal(numero)) {
+                    document.getElementById("resultado").value = "Erro: O número inserido não é hexadecimal.";
+                    return;
+                }
+                decimal = parseInt(numero, 16);
+                break;
+            default:
+                document.getElementById("resultado").value = "Erro: Base de origem inválida.";
+                return;
         }
+
+        const resultado = converterParaBase(decimal, baseDestino);
+        document.getElementById("resultado").value = resultado;
+    }
     </script>
 </body>
 </html>
