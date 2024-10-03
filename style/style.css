@@ -142,7 +142,9 @@ hr {
 .conteudo {
     font-size: 18px;
 }
-
+#conteudoPrincipal ul {
+    margin: 0;;
+}
 #conteudoPrincipal a {
     text-decoration: none;
     color:#00510f
