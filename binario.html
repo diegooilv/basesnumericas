@@ -15,7 +15,7 @@
           "@context": "https://schema.org",
           "@type": "WebPage",
           "name": "Bases Numéricas - Binário",
-          "url": "https://basesnumericas.pages.dev/binario.html",
+          "url": "https://basesnumericas.pages.dev/binario",
           "description": "Página que explica o sistema de numeração binário, muito utilizado no meio da tecnologia.",
           "isPartOf": {
             "@type": "EducationalOrganization",
@@ -136,18 +136,20 @@
             <p>
                 A adição e subtração em binário seguem princípios similares ao decimal, mas com apenas os dígitos 0 e 1. Para a adição:
             </p>
-            <ul>
+            <ul class="exemplos">
                 <li><strong>0 + 0 = 0</strong></li>
                 <li><strong>0 + 1 = 1</strong></li>
                 <li><strong>1 + 0 = 1</strong></li>
-                <li><strong>1 + 1 = 10 (0 e vai 1 para a próxima casa)</strong></li>
+                <li><strong>1 + 1 = 10</strong></li>
             </ul>
             <p>
-                <h4><strong>Exemplo de Adição:</strong><br></h4>
-                1011<br>
-                + 1010<br>
-                ---------------<br>
-                10101<br>
+                <h4><strong>Exemplo de Adição:</strong></h4>
+                <div style="font-family: monospace; text-align: end;">
+                    1011 <br>
+                    + 1010 <br>
+                    <hr style="margin: 5px 0; border: 1px solid black; width: 100%;">
+                    10101
+                </div>
             </p>
 
             <h3>Multiplicação:</h3>
@@ -156,14 +158,18 @@
                 e somadas.
             </p>
             <p>
-                <h4><strong>Exemplo:</strong><br></h4>
-                101<br>
-                × 11<br>
-                ---------------<br>
-                101<br>
-                101<br>
-                ---------------<br>
-                1111<br>
+                <h4><strong>Exemplo:</strong></h4>
+                <div style="font-family: monospace; text-align: end;">
+                    101 <br>
+                    ×  11 <br>
+                    <hr style="margin: 5px 0; border: 1px solid black;">
+                    &nbsp;&nbsp;101 <br>
+                    101 <br>
+                    <hr style="margin: 5px 0; border: 1px solid black;">
+                    1111 <br>
+                </div>
+                <div class="exemplos">5 x 3 = 15 (decimal)</div>
+
             </p>
 
             <h3>Divisão:</h3>
@@ -172,7 +178,10 @@
             </p>
             <p>
                 <h4><strong>Exemplo:</strong><br></h4>
-                1010 ÷ 10 = 101 (equivalente a 10 ÷ 2 = 5)
+                <div style="font-family: monospace;">
+                    1010 ÷ 10 = 101 <br>
+                    10 ÷ 2 = 5 (decimal)
+                </div>
             </p>
 
             <h2>Conexão com Outros Sistemas Numéricos</h2>
