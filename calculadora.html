@@ -162,7 +162,6 @@
             return /^-?[0-9a-fA-F]+([.,][0-9a-fA-F]+)?$/.test(valor); 
         }
     
-      
         function converterParaBase(decimal, baseDestino) {
             let resultado;
             switch(baseDestino) {
@@ -183,7 +182,7 @@
             }
             return resultado; 
         }
-
+    
         function converter() {
             let numero = document.getElementById("numero").value;
             const baseOrigem = document.getElementById("baseOrigem").value;
@@ -194,9 +193,9 @@
                 document.getElementById("resultado").value = "Erro: Nenhum número inserido.";
                 return;
             }
-
+    
             numero = numero.replace(',', '.');
-
+    
             if ((numero.match(/\./g) || []).length > 1) {
                 document.getElementById("resultado").value = "Erro: Número com múltiplos separadores decimais.";
                 return;
@@ -212,21 +211,30 @@
                 return;
             }
     
+            let isNegative = numero.startsWith('-');
+            if (isNegative) {
+                numero = numero.slice(1); // Remove o sinal negativo para facilitar a conversão
+            }
+    
             switch(baseOrigem) {
                 case "binario":
                     if (!isBinario(numero)) {
                         document.getElementById("resultado").value = "Erro: O número inserido não é binário.";
                         return;
                     }
-                    decimal = parseFloat(parseInt(numero, 2) + (numero.includes(".") ? parseInt(numero.split(".")[1], 2) / Math.pow(2, numero.split(".")[1].length) : 0));
+                    decimal = parseInt(numero.split(".")[0], 2) || 0; // Parte inteira
+                    decimal += numero.includes(".") ? parseInt(numero.split(".")[1], 2) / Math.pow(2, numero.split(".")[1].length) : 0; // Parte decimal
                     break;
+    
                 case "octal":
                     if (!isOctal(numero)) {
                         document.getElementById("resultado").value = "Erro: O número inserido não é octal.";
                         return;
                     }
-                    decimal = parseFloat(parseInt(numero, 8) + (numero.includes(".") ? parseInt(numero.split(".")[1], 8) / Math.pow(8, numero.split(".")[1].length) : 0));
+                    decimal = parseInt(numero.split(".")[0], 8) || 0; // Parte inteira
+                    decimal += numero.includes(".") ? parseInt(numero.split(".")[1], 8) / Math.pow(8, numero.split(".")[1].length) : 0; // Parte decimal
                     break;
+    
                 case "decimal":
                     if (!isDecimal(numero)) {
                         document.getElementById("resultado").value = "Erro: O número inserido não é decimal.";
@@ -234,16 +242,23 @@
                     }
                     decimal = parseFloat(numero); 
                     break;
+    
                 case "hexadecimal":
                     if (!isHexadecimal(numero)) {
                         document.getElementById("resultado").value = "Erro: O número inserido não é hexadecimal.";
                         return;
                     }
-                    decimal = parseFloat(parseInt(numero, 16) + (numero.includes(".") ? parseInt(numero.split(".")[1], 16) / Math.pow(16, numero.split(".")[1].length) : 0));
+                    decimal = parseInt(numero.split(".")[0], 16) || 0; 
+                    decimal += numero.includes(".") ? parseInt(numero.split(".")[1], 16) / Math.pow(16, numero.split(".")[1].length) : 0; 
                     break;
+    
                 default:
                     document.getElementById("resultado").value = "Erro: Base de origem inválida.";
                     return;
+            }
+    
+            if (isNegative) {
+                decimal = -decimal; 
             }
     
             if (baseOrigem === baseDestino) {
@@ -252,7 +267,6 @@
             }
     
             const resultado = converterParaBase(decimal, baseDestino);
-    
             document.getElementById("resultado").value = resultado;
         }
     </script>
