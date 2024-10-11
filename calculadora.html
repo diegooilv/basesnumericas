@@ -151,55 +151,73 @@
         }
     
         function isOctal(valor) {
-            return /^-?[0-7]+([.,][0-7]+)?$/.test(valor);  
+            return /^-?[0-7]+([.,][0-7]+)?$/.test(valor); 
         }
     
         function isDecimal(valor) {
-            return /^-?\d+([.,]?\d+)?$/.test(valor);
+            return /^-?\d+([.,]?\d+)?$/.test(valor);  
         }
     
         function isHexadecimal(valor) {
-            return /^-?[0-9a-fA-F]+([.,][0-9a-fA-F]+)?$/.test(valor);  
+            return /^-?[0-9a-fA-F]+([.,][0-9a-fA-F]+)?$/.test(valor); 
         }
     
+      
         function converterParaBase(decimal, baseDestino) {
-        let resultado;
-        switch(baseDestino) {
-            case "binario":
-                resultado = (decimal < 0 ? "-" : "") + Math.abs(decimal).toString(2);
-                break;
-            case "octal":
-                resultado = (decimal < 0 ? "-" : "") + Math.abs(decimal).toString(8);
-                break;
-            case "decimal":
-                resultado = decimal.toString(10);
-                break;
-            case "hexadecimal":
-                resultado = (decimal < 0 ? "-" : "") + Math.abs(decimal).toString(16);
-                break;
-            default:
-                return null;
+            let resultado;
+            switch(baseDestino) {
+                case "binario":
+                    resultado = (decimal < 0 ? "-" : "") + Math.abs(decimal).toString(2);
+                    break;
+                case "octal":
+                    resultado = (decimal < 0 ? "-" : "") + Math.abs(decimal).toString(8);
+                    break;
+                case "decimal":
+                    resultado = decimal.toString(10);
+                    break;
+                case "hexadecimal":
+                    resultado = (decimal < 0 ? "-" : "") + Math.abs(decimal).toString(16);
+                    break;
+                default:
+                    return null;
+            }
+            return resultado; 
         }
-        return resultado.replace(',', '.');
-    }
+
         function converter() {
             let numero = document.getElementById("numero").value;
             const baseOrigem = document.getElementById("baseOrigem").value;
             const baseDestino = document.getElementById("baseDestino").value;
             let decimal;
     
-            if (baseOrigem === baseDestino) {
-                document.getElementById("resultado").value = "Erro: As bases de origem e destino são iguais.";
+            if (!numero) {
+                document.getElementById("resultado").value = "Erro: Nenhum número inserido.";
                 return;
             }
+
             numero = numero.replace(',', '.');
+
+            if ((numero.match(/\./g) || []).length > 1) {
+                document.getElementById("resultado").value = "Erro: Número com múltiplos separadores decimais.";
+                return;
+            }
+    
+            if ((numero.match(/-/g) || []).length > 1) {
+                document.getElementById("resultado").value = "Erro: Número com múltiplos sinais negativos.";
+                return;
+            }
+    
+            if (numero.includes(".") && numero.split(".")[1].length > 10) {
+                document.getElementById("resultado").value = "Erro: Parte fracionária muito longa.";
+                return;
+            }
+    
             switch(baseOrigem) {
                 case "binario":
                     if (!isBinario(numero)) {
                         document.getElementById("resultado").value = "Erro: O número inserido não é binário.";
                         return;
                     }
-                    decimal = parseFloat(numero).toString(2);
                     decimal = parseFloat(parseInt(numero, 2) + (numero.includes(".") ? parseInt(numero.split(".")[1], 2) / Math.pow(2, numero.split(".")[1].length) : 0));
                     break;
                 case "octal":
@@ -227,10 +245,18 @@
                     document.getElementById("resultado").value = "Erro: Base de origem inválida.";
                     return;
             }
+    
+            if (baseOrigem === baseDestino) {
+                document.getElementById("resultado").value = "Erro: As bases de origem e destino são iguais.";
+                return;
+            }
+    
             const resultado = converterParaBase(decimal, baseDestino);
+    
             document.getElementById("resultado").value = resultado;
         }
     </script>
+    
     
 </body>
 </html>
