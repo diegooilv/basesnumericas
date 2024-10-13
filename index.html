@@ -49,6 +49,39 @@
                 width: auto;
             }
      }  
+
+     #lista1 {
+        list-style: none;
+        display: flex;
+        gap: 5px;
+     }
+
+     #lista1 li {
+        font-size: 35px;
+
+     }
+     #lista2 {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+     }
+
+     #lista2 li {
+        font-size: 20px;
+
+     }
+
+     h2 {
+        font-size: 38px;
+     }
+     .linkc {
+        font-size: 30px;
+     }
+
+     h4 {
+        margin: 3px 0;
+     }
         </style>
         
 </head>
@@ -80,15 +113,44 @@
             <figure>
                 <img src="img/Téc. Infotmática_Horizontal.png" alt="Logotipo de Tecnologia da Informação" id="imgInfo">
             </figure>
-            
-            <p id="p1">Este projeto foi desenvolvido em 2024 como parte da disciplina <strong>"Projeto Integrador I"</strong>.</p>
+        
+            <p>O presente projeto foi desenvolvido em 2024 como parte da disciplina <strong>"Projeto Integrador I"</strong>.</p>
+            <p>O tema abordado neste projeto é o de bases numéricas, um conceito fundamental na matemática e na computação. <br> As bases numéricas são sistemas de contagem que empregam diferentes bases para representar valores. <br> Durante o primeiro ano letivo (2023), foram realizados estudos aprofundados sobre esses sistemas, tornando-se essencial revisitar e expandir o conhecimento adquirido. <br> </p>
+            <h3>Resumo do projeto:</h3> 
+            <p>
+                "O objetivo deste projeto é desenvolver um site para auxiliar nos
+                estudos da disciplina de “Fundamentos da Computação”, focando no conteúdo
+                de bases numéricas. Utilizando as tecnologias HTML, CSS e JavaScript,
+                desenvolveremos páginas web estáticas, o site oferecerá conteúdo de qualidade
+                e um conversor de bases numéricas. Permitirá aos estudantes esclarecer dúvidas
+                específicas através de páginas dedicadas a cada base numérica. Também será
+                possível corrigir exercícios de conversão. O site estará disponível para todos
+                que acessarem via navegador com conexão à internet, através de uma
+                hospedagem segura e de qualidade"
+            </p>
+           <h3>Site</h3>
+                <p>O site apresenta conteúdos relativos a diversas bases numéricas. <br> Na parte superior do site, encontra-se uma barra de navegação com todas as bases numéricas, sendo elas:</p>
+                <p>
+                <ul id="lista1">
+                    <li class="linkMenuConteudos"><a href="/decimal" class="linkc">Decimal</a></li>
+                    <li class="linkMenuConteudos"><a href="/binario" class="linkc">Binário</a></li>
+                    <li class="linkMenuConteudos"><a href="/octal" class="linkc">Octal</a></li>
+                    <li class="linkMenuConteudos"><a href="/hexadecimal" class="linkc">Hexadecimal</a></li>
+                </ul>
+            </p>
+        
+            <h4>Outras seções do site incluem:</h4>
+            <ul id="lista2">
+                <li><a href="/sobre">Sobre</a> - informações acerca dos desenvolvedores do site e do projeto, bem como artigos e apresentação.</li>
+                <li><a href="/referencias">Referências</a> - informações sobre as fontes utilizadas na elaboração do projeto.</li>
+            </ul>
+            <h2>Calculadora</h2>
+            <p><a href="/calculadora" class="linkc">Calculadora</a> - Esta ferramenta permite realizar conversões entre diversos números em diferentes bases numéricas. <br> A calculadora aceita valores positivos e negativos.</p>
 
-            <p class="conteudo">Optamos por explorar o tema de bases numéricas, um tópico fundamental na matemática e na computação. As bases numéricas são sistemas de contagem que utilizam diferentes bases para representar valores. Durante nosso primeiro ano (2023), estudamos esses sistemas em detalhes, e achamos que era essencial revisitar e aprofundar nosso conhecimento sobre eles. No topo deste site, você encontrará links úteis que explicam cada sistema de numeração e suas aplicações práticas.</p>
-
-            <p class="conteudo">A compreensão das bases numéricas é crucial para várias áreas da tecnologia e da ciência da computação. O sistema <a href="/decimal">Decimal</a>, base 10, é o mais comum e amplamente utilizado no dia a dia. O sistema <a href="/binario">Binário</a>, base 2, é fundamental para a computação, pois os computadores utilizam esta base para processamento de dados. O sistema <a href="/octal">Octal</a>, base 8, e o sistema <a href="/hexadecimal">Hexadecimal</a>, base 16, são usados em contextos específicos, como em programação e na representação de cores digitais. </p>
-
-            <p class="conteudo">Além dos links para cada sistema de numeração, incluímos uma calculadora interativa que permite converter números entre essas bases. Essa ferramenta é útil para praticar a conversão e entender melhor as diferenças entre os sistemas numéricos.</p>
+            <h4>Seções Extras</h4>
+            <p>Consulte o artigo do projeto e os arquivos gerados durante a sua execução em <a href="/sobre">neste link</a></p>
         </section>
+        
     </main>
     <footer>
         <p>&copy; 2024 IFRS - Projeto Integrador I</p>
