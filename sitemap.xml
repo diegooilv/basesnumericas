@@ -1,33 +1,79 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://basesnumericas.pages.dev/</loc>
-    <lastmod>2024-09-20T18:31:22+00:00</lastmod>
-    <priority>1.00</priority>
-  </url>
-  <url>
-    <loc>https://basesnumericas.pages.dev/decimal</loc>
-    <lastmod>2024-09-20T18:31:22+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://basesnumericas.pages.dev/binario</loc>
-    <lastmod>2024-09-20T18:31:22+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://basesnumericas.pages.dev/octal</loc>
-    <lastmod>2024-09-20T18:31:22+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://basesnumericas.pages.dev/hexadecimal</loc>
-    <lastmod>2024-09-20T18:31:22+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
-  <url>
-    <loc>https://basesnumericas.pages.dev/calculadora</loc>
-    <lastmod>2024-09-20T18:31:22+00:00</lastmod>
-    <priority>0.80</priority>
-  </url>
+<urlset
+      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<url>
+  <loc>https://basesnumericas.pages.dev/</loc>
+  <lastmod>2024-10-14T02:36:01+00:00</lastmod>
+  <priority>1.00</priority>
+</url>
+<url>
+  <loc>https://basesnumericas.pages.dev/sobre</loc>
+  <lastmod>2024-10-14T02:36:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://basesnumericas.pages.dev/referencias</loc>
+  <lastmod>2024-10-14T02:36:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://basesnumericas.pages.dev/decimal</loc>
+  <lastmod>2024-10-14T02:36:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://basesnumericas.pages.dev/binario</loc>
+  <lastmod>2024-10-14T02:36:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://basesnumericas.pages.dev/octal</loc>
+  <lastmod>2024-10-14T02:36:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://basesnumericas.pages.dev/hexadecimal</loc>
+  <lastmod>2024-10-14T02:36:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://basesnumericas.pages.dev/calculadora</loc>
+  <lastmod>2024-10-14T02:36:01+00:00</lastmod>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://basesnumericas.pages.dev/artigo/Artigo%20Banca%20Pr%C3%A9via.docx</loc>
+  <lastmod>2024-10-14T02:36:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://basesnumericas.pages.dev/artigo/Artigo%20Banca%20Pr%C3%A9via.pdf</loc>
+  <lastmod>2024-10-14T02:36:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://basesnumericas.pages.dev/pdf/Sistema%20Bin%C3%A1rio.pdf</loc>
+  <lastmod>2024-10-14T02:36:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://basesnumericas.pages.dev/pdf/Sistema%20Hexadecimal.pdf</loc>
+  <lastmod>2024-10-14T02:36:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://basesnumericas.pages.dev/pdf/Sistema%20Octal.pdf</loc>
+  <lastmod>2024-10-14T02:36:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+<url>
+  <loc>https://basesnumericas.pages.dev/pdf/Aritmetica%20Binaria.pdf</loc>
+  <lastmod>2024-10-14T02:36:01+00:00</lastmod>
+  <priority>0.64</priority>
+</url>
+
+
 </urlset>
