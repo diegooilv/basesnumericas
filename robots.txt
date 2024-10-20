@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
 Disallow: /404
+Disallow: /pdf/
+Disallow: /artigo/
 Sitemap: https://basesnumericas.pages.dev/sitemap.xml
