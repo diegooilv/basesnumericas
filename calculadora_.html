@@ -4,41 +4,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reklame+Script&family=Poppins:wght@300;600&display=swap">
     <title>Calculadora</title>
-    <link rel="icon" href="img/logo.png" type="image/png">
-    <link rel="canonical" href="https://basesnumericas.pages.dev/calculadora">
-    <meta name="description" content="Ferramenta interativa para conversão de números entre binário, octal, decimal e hexadecimal. Explore seções sobre o projeto e referências, tornando a aprendizagem de sistemas numéricos mais acessível.">
-    <meta name="keywords" content="calculadora, conversor, bases numéricas, decimal, binário, octal, hexadecimal, matemática, informática, educação">
-    <meta name="author" content="IFRS Campus Rolante">
+    <meta name="robots" content="noindex, nofollow">
 
-    <script type="application/ld+json">
-        {
-        "@context": "https://schema.org",
-        "@type": "WebPage",
-        "name": "Calculadora - Conversor de Bases Numéricas",
-        "url": "https://basesnumericas.pages.dev/calculadora.html",
-        "description": "Ferramenta de Conversor de Bases Numéricas. Converta números entre binário, octal, decimal e hexadecimal. A página inclui seções sobre o projeto, referências e uma calculadora interativa para facilitar a conversão.",
-        "isPartOf": {
-            "@type": "EducationalOrganization",
-            "name": "Instituto Federal de Ciência e Educação do Rio Grande do Sul - Campus Rolante"
-            }
-        }
-    </script>
-        <meta name="description" content="Ferramenta de Conversor de Bases Numéricas. Converta números entre binário, octal, decimal e hexadecimal. A página inclui seções sobre o projeto, referências e uma calculadora interativa para facilitar a conversão.">
-    
     <link rel="stylesheet" href="style/style.css">
     <style>
+
         main {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
+
         #calculadora {
             background-color: #ffffff;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
             padding: 20px;
+            max-width: 900px;
             width: 70dvw;
             display: flex;
             flex-direction: column;
@@ -53,22 +37,15 @@
             color: #333333;
         }
 
-        #calculadora label {
-            font-size: 14px;
-            margin-bottom: 5px;
-            color: #00510f;
+        #calculadora select {
+            height: 35px;;
+            width: 50%;
         }
 
-        
-        #calculadora select,
-        #calculadora input {
-            width: 100%;
-            padding: 8px;
-            font-size: 14px;
-            margin-bottom: 10px;
-            border: 1px solid #cccccc;
-            border-radius: 5px;
-            box-sizing: border-box;
+        .input-group {
+            display: flex;
+            align-items: center;
+            gap: 10px; 
         }
 
         #calculadora button {
@@ -83,12 +60,26 @@
         }
 
         #calculadora button:hover {
-            background-color: #52c268;;
+            background-color: #52c268;
         }
 
         #calculadora input[readonly] {
             background-color: #f9f9f9;
             cursor: not-allowed;
+        }
+        #nomes {
+            gap: calc(44% - 25px);
+
+        }
+
+        #numero, #resultado {
+            height: 40px;
+            width: calc(50% - 25px);
+        }
+
+        #rs{
+            display: flex;
+            justify-content: space-between;
         }
     </style>
 </head>
@@ -111,30 +102,42 @@
             <li class="linkMenuConteudos"><a href="/calculadora">Calculadora</a></li>
         </ul>
     </nav>
-        <hr>
-        <main>
-            <section id="calculadora">
-                <h1>Conversor de Bases Numéricas</h1>
-                <label for="baseOrigem">Base de Origem:</label>
+    <hr>
+    <main>
+        <section id="calculadora">
+            <h1>Conversor de Bases Numéricas</h1>
+            <div class="input-group" id="nomes">
+                <p>Base Origem</p>
+                <p>Base Destino</p>
+            </div>
+            <div class="input-group">
+                
                 <select id="baseOrigem">
                     <option value="binario">Binário</option>
                     <option value="octal">Octal</option>
                     <option value="decimal" selected>Decimal</option>
                     <option value="hexadecimal">Hexadecimal</option>
                 </select>
-                <label for="numero">Número:</label>
-                <input type="text" id="numero" placeholder="Digite o número">
-                <label for="baseDestino">Base de Destino:</label>
+                
+                <img src="img/seta.png" alt="seta pra direita" style="width: 25px; margin:0;">
+                
                 <select id="baseDestino">
                     <option value="binario" selected>Binário</option>
                     <option value="octal">Octal</option>
                     <option value="decimal">Decimal</option>
                     <option value="hexadecimal">Hexadecimal</option>
                 </select>
-                <label for="resultado">Resultado:</label>
+            </div>
+
+            <div class="input-group" id="rs">
+                <input type="text" id="numero" placeholder="Digite o número">
                 <input type="text" id="resultado" placeholder="Resultado" readonly>
-                <button onclick="converter()">Converter</button>
-            </section>
+            </div>
+
+            
+
+            <button onclick="converter()">Converter</button>
+        </section>
     </main>
     <footer>
         <p>&copy; 2024 IFRS - Projeto Integrador I</p>
@@ -264,7 +267,5 @@
             document.getElementById("resultado").value = resultado;
         }
     </script>
-    
-    
 </body>
 </html>
