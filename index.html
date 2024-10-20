@@ -50,10 +50,10 @@
      #lista1 {
         list-style: none;
         display: flex;
-        gap: 5px;
      }
 
      #lista1 li {
+        align-items: center;
         font-size: 35px;
 
      }
@@ -82,6 +82,16 @@
 
      #imgInfo {
         max-height: 1100px !important;
+     }
+
+     @media (max-width: 550px){
+        #lista1 li a {
+            margin:0;
+            font-size: 18px;
+        }
+        #lista ul {
+            margin:0
+        }
      }
         </style>
         
@@ -130,8 +140,8 @@
                 que acessarem via navegador com conexão à internet.
             </p>
            <h3>Site</h3>
-                <p>O site apresenta conteúdos relativos a diversas bases numéricas. <br> Na parte superior do site, encontra-se uma barra de navegação com todas as bases numéricas, sendo elas:</p>
-                <p>
+                <p>O site apresenta conteúdos relativos a diversas bases numéricas. <br> Na parte superior do site, encontra-se uma barra de navegação com todas as bases numéricas, sendo elas:
+                
                 <ul id="lista1" style="gap:10px;">
                     <li class="linkMenuConteudos"><a href="/decimal" class="linkc">Decimal</a></li>
                     <li class="linkMenuConteudos"><a href="/binario" class="linkc">Binário</a></li>
