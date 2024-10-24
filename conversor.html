@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Bases Numéricas - IFRS</title>
+    <meta name="description"
+        content="Transforme números entre diferentes bases numéricas, como binário, decimal, octal e hexadecimal, de maneira simples e rápida com nosso Conversor de Bases Online, desenvolvido no Projeto Integrador I no IFRS.">
+    <meta name="keywords"
+        content="conversor de bases, conversão de números, binário para decimal, conversor hexadecimal, conversor de bases online, decimal para hexadecimal, converter números">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Conversor de Bases Numéricas">
+    <meta property="og:title"
+        content="Conversor de Bases - Converta Números entre Binário, Octal, Decimal e Hexadecimal com Facilidade">
+    <meta property="og:description"
+        content="O Conversor de Bases permite conversões rápidas e precisas entre várias bases numéricas. É uma ferramenta simples e intuitiva.">
+    <meta property="og:url" content="https://basesnumericas.pages.dev/conversor">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Conversor de Bases - Conversão Rápida e Eficiente - IFRS">
+    <meta name="twitter:description"
+        content="Realize conversões de números entre binário, decimal, hexadecimal e octal de forma rápida e eficiente com nosso Conversor de Bases Online, parte do Projeto Integrador I no IFRS.">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Conversor de Bases Numéricas - IFRS",
+        "url": "https://basesnumericas.pages.dev/conversor",
+        "description": "Ferramenta para conversão entre binário, octal, decimal e hexadecimal. A página oferece um conversor interativo, seções sobre o projeto e referências.",
+        "isPartOf": {
+            "@type": "EducationalOrganization",
+            "name": "Instituto Federal de Ciência e Educação do Rio Grande do Sul - Campus Rolante"
+        }
+    }
+</script>
+    <meta name="description"
+        content="Ferramenta de Conversor de Bases Numéricas. Converta números entre binário, octal, decimal e hexadecimal. A página inclui seções sobre o projeto, referências e uma calculadora interativa para facilitar a conversão.">
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+        main {
+            display: flex;
+            justify-content: center;
+        }
+
+        #conteudoPrincipal {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 900px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .form-group {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            text-align: center;
+            align-items: stretch;
+            width: 100%;
+        }
+
+        .input-group-addon {
+            height: inherit;
+            background-color: #00510f;
+            width: 10%;
+            min-width: 60px;
+            color: white;
+            padding: 10px 20px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .input-group-addon span {
+            display: block;
+        }
+
+        textarea.form-control {
+            width: 100%;
+            border: 2px solid #00510f;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            outline: none;
+            resize: none;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        textarea.form-control:focus {
+            border-color: #52c268;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 10px;
+            }
+
+            .input-group-addon {
+                padding: 8px 15px;
+            }
+
+            textarea.form-control {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 645px) {
+            #menuMain {
+                justify-content: space-between !important;
+            }
+
+            @media (max-width: 380px) {
+                #menuMain {
+                    justify-content: center !important;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav id="menu">
+            <img src="img/Logo-IFRS-branco-sem-fundo-horizontal.png" alt="Logotipo do IFRS" id="logo">
+            <ul id="lista-menu">
+                <li class="lista-menu"><a href="/sobre">Sobre</a></li>
+                <li class="lista-menu"><a href="/referencias">Referências</a></li>
+            </ul>
+        </nav>
+    </header>
+    <nav id="menu-conteudos">
+        <ul id="menuMain">
+            <li class="linkMenuConteudos"><a href="/decimal">Decimal</a></li>
+            <li class="linkMenuConteudos"><a href="/binario">Binário</a></li>
+            <li class="linkMenuConteudos"><a href="/octal">Octal</a></li>
+            <li class="linkMenuConteudos"><a href="/hexadecimal">Hexadecimal</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <main>
+        <section id="conteudoPrincipal">
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon"><span>Binário</span><span>(0 | 1)</span></div>
+                    <textarea id="base-2" class="form-control" rows="4"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon"><span>Octal</span><span>(0 ~ 7)</span></div>
+                    <textarea id="base-8" class="form-control" rows="4"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon"><span>Decimal</span><span>(0 ~ 9)</span></div>
+                    <textarea id="base-10" class="form-control" rows="4"></textarea>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <div class="input-group-addon"><span>Hexadecimal</span><span>(0 ~ 9, A ~ F)</span></div>
+                    <textarea id="base-16" class="form-control" rows="4"></textarea>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 IFRS - Projeto Integrador I</p>
+    </footer>
+    <script>
+        $(document).ready(function () {
+            $('#base-2, #base-8, #base-10, #base-16').on('input', function () {
+                var maxLength = 12;
+                if ($(this).val().length > maxLength) {
+                    $(this).val($(this).val().substr(0, maxLength));
+                }
+            });
+        });
+        (() => {
+            "use strict";
+            !function (e) {
+                function a(e, a, t) {
+                    if (!e)
+                        return "";
+                    var s = parseInt(e, a);
+                    return isNaN(s) ? "" : s.toString(t).toUpperCase()
+                }
+                e("#base-2").on("input", (function (t) {
+                    var s = e(this).val();
+                    if (!/^[01]*$/.test(s))
+                        return t.preventDefault(),
+                            this.value = s.slice(0, -1),
+                            !1;
+                    e("#base-8").val(a(s, 2, 8)),
+                        e("#base-10").val(a(s, 2, 10)),
+                        e("#base-16").val(a(s, 2, 16))
+                }
+                )),
+                    e("#base-8").on("input", (function (t) {
+                        var s = e(this).val();
+                        if (!/^[0-7]*$/.test(s))
+                            return t.preventDefault(),
+                                this.value = s.slice(0, -1),
+                                !1;
+                        e("#base-2").val(a(s, 8, 2)),
+                            e("#base-10").val(a(s, 8, 10)),
+                            e("#base-16").val(a(s, 8, 16))
+                    }
+                    )),
+                    e("#base-10").on("input", (function (t) {
+                        var s = e(this).val();
+                        if (!/^[0-9]*$/.test(s))
+                            return t.preventDefault(),
+                                this.value = s.slice(0, -1),
+                                !1;
+                        e("#base-2").val(a(s, 10, 2)),
+                            e("#base-8").val(a(s, 10, 8)),
+                            e("#base-16").val(a(s, 10, 16))
+                    }
+                    )),
+                    e("#base-16").on("input", (function (t) {
+                        var s = e(this).val();
+                        if (!/^(0x|0X)?[0-9A-Fa-f]*$/.test(s))
+                            return t.preventDefault(),
+                                this.value = s.slice(0, -1),
+                                !1;
+                        e("#base-2").val(a(s, 16, 2)),
+                            e("#base-8").val(a(s, 16, 8)),
+                            e("#base-10").val(a(s, 16, 10))
+                    }
+                    ))
+            }(jQuery)
+        }
+        )();
+
+    </script>
+</body>
+
+</html>
