@@ -186,6 +186,16 @@
                 }
             });
         });
+        $(document).ready(function () {
+            var maxLength = 12;
+
+            $('#base-2, #base-8, #base-10, #base-16').on('input', function () {
+                if ($(this).val().length > maxLength) {
+                    $(this).val($(this).val().substr(0, maxLength));
+                }
+            });
+        });
+
         (() => {
             "use strict";
             !function (e) {
@@ -193,55 +203,67 @@
                     if (!e)
                         return "";
                     var s = parseInt(e, a);
-                    return isNaN(s) ? "" : s.toString(t).toUpperCase()
+                    return isNaN(s) ? "" : s.toString(t).toUpperCase();
                 }
-                e("#base-2").on("input", (function (t) {
+
+                e("#base-2").on("input", function (t) {
                     var s = e(this).val();
-                    if (!/^[01]*$/.test(s))
-                        return t.preventDefault(),
-                            this.value = s.slice(0, -1),
-                            !1;
-                    e("#base-8").val(a(s, 2, 8)),
-                        e("#base-10").val(a(s, 2, 10)),
-                        e("#base-16").val(a(s, 2, 16))
-                }
-                )),
-                    e("#base-8").on("input", (function (t) {
-                        var s = e(this).val();
-                        if (!/^[0-7]*$/.test(s))
-                            return t.preventDefault(),
-                                this.value = s.slice(0, -1),
-                                !1;
-                        e("#base-2").val(a(s, 8, 2)),
-                            e("#base-10").val(a(s, 8, 10)),
-                            e("#base-16").val(a(s, 8, 16))
+                    if (!/^[01]*$/.test(s)) {
+                        t.preventDefault();
+                        this.value = s.slice(0, -1);
+                        return false;
                     }
-                    )),
-                    e("#base-10").on("input", (function (t) {
-                        var s = e(this).val();
-                        if (!/^[0-9]*$/.test(s))
-                            return t.preventDefault(),
-                                this.value = s.slice(0, -1),
-                                !1;
-                        e("#base-2").val(a(s, 10, 2)),
-                            e("#base-8").val(a(s, 10, 8)),
-                            e("#base-16").val(a(s, 10, 16))
+                    if (s.length <= 12) {
+                        e("#base-8").val(a(s, 2, 8));
+                        e("#base-10").val(a(s, 2, 10));
+                        e("#base-16").val(a(s, 2, 16));
                     }
-                    )),
-                    e("#base-16").on("input", (function (t) {
-                        var s = e(this).val();
-                        if (!/^(0x|0X)?[0-9A-Fa-f]*$/.test(s))
-                            return t.preventDefault(),
-                                this.value = s.slice(0, -1),
-                                !1;
-                        e("#base-2").val(a(s, 16, 2)),
-                            e("#base-8").val(a(s, 16, 8)),
-                            e("#base-10").val(a(s, 16, 10))
+                });
+
+                e("#base-8").on("input", function (t) {
+                    var s = e(this).val();
+                    if (!/^[0-7]*$/.test(s)) {
+                        t.preventDefault();
+                        this.value = s.slice(0, -1);
+                        return false;
                     }
-                    ))
-            }(jQuery)
-        }
-        )();
+                    if (s.length <= 12) {
+                        e("#base-2").val(a(s, 8, 2));
+                        e("#base-10").val(a(s, 8, 10));
+                        e("#base-16").val(a(s, 8, 16));
+                    }
+                });
+
+                e("#base-10").on("input", function (t) {
+                    var s = e(this).val();
+                    if (!/^[0-9]*$/.test(s)) {
+                        t.preventDefault();
+                        this.value = s.slice(0, -1);
+                        return false;
+                    }
+                    if (s.length <= 12) {
+                        e("#base-2").val(a(s, 10, 2));
+                        e("#base-8").val(a(s, 10, 8));
+                        e("#base-16").val(a(s, 10, 16));
+                    }
+                });
+
+                e("#base-16").on("input", function (t) {
+                    var s = e(this).val();
+                    if (!/^(0x|0X)?[0-9A-Fa-f]*$/.test(s)) {
+                        t.preventDefault();
+                        this.value = s.slice(0, -1);
+                        return false;
+                    }
+                    if (s.length <= 12) {
+                        e("#base-2").val(a(s, 16, 2));
+                        e("#base-8").val(a(s, 16, 8));
+                        e("#base-10").val(a(s, 16, 10));
+                    }
+                });
+            }(jQuery);
+        })();
+
 
     </script>
 </body>
