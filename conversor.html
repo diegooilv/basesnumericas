@@ -179,19 +179,12 @@
     </footer>
     <script>
         $(document).ready(function () {
-            $('#base-2, #base-8, #base-10, #base-16').on('input', function () {
-                var maxLength = 12;
-                if ($(this).val().length > maxLength) {
-                    $(this).val($(this).val().substr(0, maxLength));
-                }
-            });
-        });
-        $(document).ready(function () {
             var maxLength = 12;
 
             $('#base-2, #base-8, #base-10, #base-16').on('input', function () {
-                if ($(this).val().length > maxLength) {
-                    $(this).val($(this).val().substr(0, maxLength));
+                var val = $(this).val();
+                if (val.length > maxLength) {
+                    $(this).val(val.slice(0, maxLength));
                 }
             });
         });
@@ -200,70 +193,64 @@
             "use strict";
             !function (e) {
                 function a(e, a, t) {
-                    if (!e)
-                        return "";
+                    if (!e) return "";
                     var s = parseInt(e, a);
                     return isNaN(s) ? "" : s.toString(t).toUpperCase();
                 }
 
-                e("#base-2").on("input", function (t) {
-                    var s = e(this).val();
-                    if (!/^[01]*$/.test(s)) {
-                        t.preventDefault();
-                        this.value = s.slice(0, -1);
-                        return false;
-                    }
-                    if (s.length <= 12) {
-                        e("#base-8").val(a(s, 2, 8));
-                        e("#base-10").val(a(s, 2, 10));
-                        e("#base-16").val(a(s, 2, 16));
-                    }
-                });
+                function handleInput(selector, baseFrom) {
+                    e(selector).on("input", function () {
+                        var s = e(this).val();
+                        var regex = getRegex(baseFrom);
 
-                e("#base-8").on("input", function (t) {
-                    var s = e(this).val();
-                    if (!/^[0-7]*$/.test(s)) {
-                        t.preventDefault();
-                        this.value = s.slice(0, -1);
-                        return false;
-                    }
-                    if (s.length <= 12) {
-                        e("#base-2").val(a(s, 8, 2));
-                        e("#base-10").val(a(s, 8, 10));
-                        e("#base-16").val(a(s, 8, 16));
-                    }
-                });
+                        if (!regex.valid.test(s)) {
+                            s = s.replace(regex.invalid, "");
+                        }
 
-                e("#base-10").on("input", function (t) {
-                    var s = e(this).val();
-                    if (!/^[0-9]*$/.test(s)) {
-                        t.preventDefault();
-                        this.value = s.slice(0, -1);
-                        return false;
-                    }
-                    if (s.length <= 12) {
-                        e("#base-2").val(a(s, 10, 2));
-                        e("#base-8").val(a(s, 10, 8));
-                        e("#base-16").val(a(s, 10, 16));
-                    }
-                });
+                        if (s.length > 12) {
+                            s = s.slice(0, 12);
+                        }
 
-                e("#base-16").on("input", function (t) {
-                    var s = e(this).val();
-                    if (!/^(0x|0X)?[0-9A-Fa-f]*$/.test(s)) {
-                        t.preventDefault();
-                        this.value = s.slice(0, -1);
-                        return false;
+                        if (s.charAt(0) === '0' && s.length > 1) {
+                            s = s.slice(0, -1);
+                        }
+
+                        if (s.charAt(s.length - 1) === '0' && s.length === 1) {
+                            s = '';
+                        }
+
+                        e(this).val(s);
+
+                        if (s) {
+                            e("#base-2").val(a(s, baseFrom, 2));
+                            e("#base-8").val(a(s, baseFrom, 8));
+                            e("#base-10").val(a(s, baseFrom, 10));
+                            e("#base-16").val(a(s, baseFrom, 16));
+                        } else {
+                            e("#base-2, #base-8, #base-10, #base-16").val("");
+                        }
+                    });
+                }
+
+                function getRegex(base) {
+                    switch (base) {
+                        case 2:
+                            return { valid: /^[01]*$/, invalid: /[^01]/g };
+                        case 8:
+                            return { valid: /^[0-7]*$/, invalid: /[^0-7]/g };
+                        case 10:
+                            return { valid: /^[0-9]*$/, invalid: /[^0-9]/g };
+                        case 16:
+                            return { valid: /^[0-9A-Fa-f]*$/, invalid: /[^0-9A-Fa-f]/g };
                     }
-                    if (s.length <= 12) {
-                        e("#base-2").val(a(s, 16, 2));
-                        e("#base-8").val(a(s, 16, 8));
-                        e("#base-10").val(a(s, 16, 10));
-                    }
-                });
+                }
+
+                handleInput("#base-2", 2);
+                handleInput("#base-8", 8);
+                handleInput("#base-10", 10);
+                handleInput("#base-16", 16);
             }(jQuery);
         })();
-
 
     </script>
 </body>
