@@ -84,6 +84,21 @@
             display: block;
         }
 
+        #botaoLimpar {
+            background-color: #00510f;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.2s ease;
+        }
+
+        #botaoLimpar:hover {
+            background-color: #4CAF50;
+        }
+
         textarea.form-control {
             width: 100%;
             border: 2px solid #00510f;
@@ -148,6 +163,7 @@
     <hr>
     <main>
         <section id="conteudoPrincipal">
+            <h1>Conversor de Bases</h1>
             <div class="form-group">
                 <div class="input-group">
                     <div class="input-group-addon"><span>Binário</span><span>(0 | 1)</span></div>
@@ -172,6 +188,7 @@
                     <textarea id="base-16" class="form-control" rows="4"></textarea>
                 </div>
             </div>
+            <button onclick="apagarConteudo()" id="botaoLimpar">Limpar</button>
         </section>
     </main>
     <footer>
@@ -179,7 +196,7 @@
     </footer>
     <script>
         $(document).ready(function () {
-            var maxLength = 12;
+            var maxLength = 13;
 
             $('#base-2, #base-8, #base-10, #base-16').on('input', function () {
                 var val = $(this).val();
@@ -207,8 +224,8 @@
                             s = s.replace(regex.invalid, "");
                         }
 
-                        if (s.length > 12) {
-                            s = s.slice(0, 12);
+                        if (s.length > 13) {
+                            s = s.slice(0, 13);
                         }
 
                         if (s.charAt(0) === '0' && s.length > 1) {
@@ -252,6 +269,24 @@
             }(jQuery);
         })();
 
+        let elementoEmFoco;
+        function salvarElementoEmFoco(event) {
+            elementoEmFoco = event.target;
+        }
+        function apagarConteudo() {
+
+            document.getElementById("base-2").value = "";
+            document.getElementById("base-10").value = "";
+            document.getElementById("base-8").value = "";
+            document.getElementById("base-16").value = "";
+
+            if (elementoEmFoco) {
+                elementoEmFoco.focus();
+            }
+        }
+        document.querySelectorAll("textarea").forEach(textarea => {
+            textarea.addEventListener('focus', salvarElementoEmFoco);
+        });
     </script>
 </body>
 
