@@ -89,8 +89,15 @@
             display: block;
         }
 
-        #botaoLimpar {
+        #buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        #botaoLimpar,
+        #format-button {
             background-color: #00510f;
+            width: 170px;
             color: white;
             padding: 10px 20px;
             border: none;
@@ -168,32 +175,37 @@
     <hr>
     <main>
         <section id="conteudoPrincipal">
-            <h1>Conversor de Bases</h1>
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-addon"><span>Binário</span><span>(0 | 1)</span></div>
-                    <textarea id="base-2" class="form-control" rows="4"></textarea>
+            <div id="print">
+                <h1>Conversor de Bases</h1>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span>Binário</span><span>(0 | 1)</span></div>
+                        <textarea id="base-2" class="form-control" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span>Octal</span><span>(0 ~ 7)</span></div>
+                        <textarea id="base-8" class="form-control" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span>Decimal</span><span>(0 ~ 9)</span></div>
+                        <textarea id="base-10" class="form-control" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span>Hexadecimal</span><span>(0 ~ 9,<br>A ~ F)</span></div>
+                        <textarea id="base-16" class="form-control" rows="4"></textarea>
+                    </div>
                 </div>
             </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-addon"><span>Octal</span><span>(0 ~ 7)</span></div>
-                    <textarea id="base-8" class="form-control" rows="4"></textarea>
-                </div>
+            <div id="buttons">
+                <button onclick="apagarConteudo()" id="botaoLimpar">Limpar</button>
+                <button onclick="formatNumber()" id="format-button">Organizar</button>
             </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-addon"><span>Decimal</span><span>(0 ~ 9)</span></div>
-                    <textarea id="base-10" class="form-control" rows="4"></textarea>
-                </div>
-            </div>
-            <div class="form-group">
-                <div class="input-group">
-                    <div class="input-group-addon"><span>Hexadecimal</span><span>(0 ~ 9,<br>A ~ F)</span></div>
-                    <textarea id="base-16" class="form-control" rows="4"></textarea>
-                </div>
-            </div>
-            <button onclick="apagarConteudo()" id="botaoLimpar">Limpar</button>
         </section>
     </main>
     <footer>
@@ -292,6 +304,39 @@
         document.querySelectorAll("textarea").forEach(textarea => {
             textarea.addEventListener('focus', salvarElementoEmFoco);
         });
+
+        function formatNumber(value, base) {
+
+            value = value.replace(/\W/g, "").toUpperCase();
+
+            switch (base) {
+                case 2:
+                    return value.split("").reverse().join("").replace(/(.{4})/g, "$1 ").trim().split("").reverse().join("");
+                case 8:
+                    return value.split("").reverse().join("").replace(/(.{3})/g, "$1 ").trim().split("").reverse().join("");
+                case 10:
+                    return value.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                case 16:
+                    return value.split("").reverse().join("").replace(/(.{4})/g, "$1 ").trim().split("").reverse().join("");
+                default:
+                    return value;
+            }
+        }
+
+
+        $("#format-button").on("click", function () {
+            let binary = $("#base-2").val();
+            let octal = $("#base-8").val();
+            let decimal = $("#base-10").val();
+            let hexadecimal = $("#base-16").val();
+
+            $("#base-2").val(formatNumber(binary, 2));
+            $("#base-8").val(formatNumber(octal, 8));
+            $("#base-10").val(formatNumber(decimal, 10));
+            $("#base-16").val(formatNumber(hexadecimal, 16));
+        });
+
+
     </script>
 </body>
 
