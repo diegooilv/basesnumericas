@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Bases - IFRS</title>
+    <meta name="robots" content="noindex, nofollow">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.min.js"></script>
+    <script src="https://rawgit.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+    <link rel="stylesheet" href="style/style.css">
+    <style>
+        main {
+            display: flex;
+            justify-content: center;
+        }
+
+        #conteudoPrincipal {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            max-width: 900px;
+            padding: 20px;
+            background-color: #fff;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .form-group {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .input-group {
+            display: flex;
+            text-align: center;
+            align-items: stretch;
+            width: 100%;
+        }
+
+        .input-group-addon {
+            height: inherit;
+            background-color: #00510f;
+            width: 10%;
+            min-width: 60px;
+            color: white;
+            padding: 10px 20px;
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .input-group-addon span {
+            display: block;
+        }
+
+        #baixar {
+            margin-top: 5px;
+        }
+
+        #buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        #botaoLimpar,
+        #format-button,
+        #baixar {
+            background-color: #00510f;
+            width: 170px;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.2s ease;
+        }
+
+        #botaoLimpar:hover {
+            background-color: #4CAF50;
+        }
+
+        textarea.form-control {
+            width: 100%;
+            border: 2px solid #00510f;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            outline: none;
+            resize: none;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        textarea.form-control:focus {
+            border-color: #52c268;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                padding: 10px;
+            }
+
+            .input-group-addon {
+                padding: 8px 15px;
+            }
+
+            textarea.form-control {
+                font-size: 14px;
+            }
+        }
+
+        @media (max-width: 645px) {
+            #menuMain {
+                justify-content: space-between !important;
+            }
+
+            @media (max-width: 380px) {
+                #menuMain {
+                    justify-content: center !important;
+                }
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav id="menu">
+            <img src="img/Logo-IFRS-branco-sem-fundo-horizontal.png" alt="Logotipo do IFRS" id="logo">
+            <ul id="lista-menu">
+                <li class="lista-menu"><a href="/sobre">Sobre</a></li>
+                <li class="lista-menu"><a href="/referencias">Referências</a></li>
+            </ul>
+        </nav>
+    </header>
+    <nav id="menu-conteudos">
+        <ul id="menuMain">
+            <li class="linkMenuConteudos"><a href="/decimal">Decimal</a></li>
+            <li class="linkMenuConteudos"><a href="/binario">Binário</a></li>
+            <li class="linkMenuConteudos"><a href="/octal">Octal</a></li>
+            <li class="linkMenuConteudos"><a href="/hexadecimal">Hexadecimal</a></li>
+        </ul>
+    </nav>
+    <hr>
+    <main>
+        <section id="conteudoPrincipal">
+            <div id="print">
+                <h1>Conversor de Bases</h1>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span>Binário</span><span>(0 | 1)</span></div>
+                        <textarea id="base-2" class="form-control" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span>Octal</span><span>(0 ~ 7)</span></div>
+                        <textarea id="base-8" class="form-control" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span>Decimal</span><span>(0 ~ 9)</span></div>
+                        <textarea id="base-10" class="form-control" rows="4"></textarea>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="input-group">
+                        <div class="input-group-addon"><span>Hexadecimal</span><span>(0 ~ 9,<br>A ~ F)</span></div>
+                        <textarea id="base-16" class="form-control" rows="4"></textarea>
+                    </div>
+                </div>
+            </div>
+            <div id="buttons">
+                <button onclick="apagarConteudo()" id="botaoLimpar">Limpar</button>
+                <button onclick="formatNumber()" id="format-button">Organizar</button>
+            </div>
+            <button onclick="baixarPrint()" id="baixar">Baixar</button>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 IFRS - Projeto Integrador I</p>
+    </footer>
+    <script>
+        $(document).ready(function () {
+            var maxLength = 13;
+
+            $('#base-2, #base-8, #base-10, #base-16').on('input', function () {
+                var val = $(this).val();
+                if (val.length > maxLength) {
+                    $(this).val(val.slice(0, maxLength));
+                }
+            });
+        });
+
+        (() => {
+            "use strict";
+            !function (e) {
+                function a(e, a, t) {
+                    if (!e) return "";
+                    var s = parseInt(e, a);
+                    return isNaN(s) ? "" : s.toString(t).toUpperCase();
+                }
+
+                function handleInput(selector, baseFrom) {
+                    e(selector).on("input", function () {
+                        var s = e(this).val();
+                        var regex = getRegex(baseFrom);
+
+                        if (!regex.valid.test(s)) {
+                            s = s.replace(regex.invalid, "");
+                        }
+
+                        if (s.length > 13) {
+                            s = s.slice(0, 13);
+                        }
+
+                        if (s.charAt(0) === '0' && s.length > 1) {
+                            s = s.slice(0, -1);
+                        }
+
+                        if (s.charAt(s.length - 1) === '0' && s.length === 1) {
+                            s = '';
+                        }
+
+                        e(this).val(s);
+
+                        if (s) {
+                            e("#base-2").val(a(s, baseFrom, 2));
+                            e("#base-8").val(a(s, baseFrom, 8));
+                            e("#base-10").val(a(s, baseFrom, 10));
+                            e("#base-16").val(a(s, baseFrom, 16));
+                        } else {
+                            e("#base-2, #base-8, #base-10, #base-16").val("");
+                        }
+                    });
+                }
+
+                function getRegex(base) {
+                    switch (base) {
+                        case 2:
+                            return { valid: /^[01]*$/, invalid: /[^01]/g };
+                        case 8:
+                            return { valid: /^[0-7]*$/, invalid: /[^0-7]/g };
+                        case 10:
+                            return { valid: /^[0-9]*$/, invalid: /[^0-9]/g };
+                        case 16:
+                            return { valid: /^[0-9A-Fa-f]*$/, invalid: /[^0-9A-Fa-f]/g };
+                    }
+                }
+
+                handleInput("#base-2", 2);
+                handleInput("#base-8", 8);
+                handleInput("#base-10", 10);
+                handleInput("#base-16", 16);
+            }(jQuery);
+        })();
+
+        let elementoEmFoco;
+        function salvarElementoEmFoco(event) {
+            elementoEmFoco = event.target;
+        }
+        function apagarConteudo() {
+
+            document.getElementById("base-2").value = "";
+            document.getElementById("base-10").value = "";
+            document.getElementById("base-8").value = "";
+            document.getElementById("base-16").value = "";
+
+            if (elementoEmFoco) {
+                elementoEmFoco.focus();
+            }
+        }
+        document.querySelectorAll("textarea").forEach(textarea => {
+            textarea.addEventListener('focus', salvarElementoEmFoco);
+        });
+
+        function formatNumber(value, base) {
+
+            value = value.replace(/\W/g, "").toUpperCase();
+
+            switch (base) {
+                case 2:
+                    return value.split("").reverse().join("").replace(/(.{4})/g, "$1 ").trim().split("").reverse().join("");
+                case 8:
+                    return value.split("").reverse().join("").replace(/(.{3})/g, "$1 ").trim().split("").reverse().join("");
+                case 10:
+                    return value.replace(/\B(?=(\d{3})+(?!\d))/g, ".");
+                case 16:
+                    return value.split("").reverse().join("").replace(/(.{4})/g, "$1 ").trim().split("").reverse().join("");
+                default:
+                    return value;
+            }
+        }
+
+
+        $("#format-button").on("click", function () {
+            let binary = $("#base-2").val();
+            let octal = $("#base-8").val();
+            let decimal = $("#base-10").val();
+            let hexadecimal = $("#base-16").val();
+
+            $("#base-2").val(formatNumber(binary, 2));
+            $("#base-8").val(formatNumber(octal, 8));
+            $("#base-10").val(formatNumber(decimal, 10));
+            $("#base-16").val(formatNumber(hexadecimal, 16));
+        });
+
+        function baixarPrint() {
+    if (typeof html2canvas === 'undefined' || typeof jsPDF === 'undefined' || typeof html2pdf === 'undefined') {
+        console.error("html2canvas, jsPDF ou html2pdf não estão carregados.");
+        return;
+    }
+
+    const element = document.body;
+    const opt = {
+        margin:       1,
+        filename:     'site.pdf',
+        image:        { type: 'jpeg', quality: 0.98 },
+        html2canvas:  { scale: 2 },
+        jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
+        pagebreak:    { mode: ['avoid-all', 'css', 'legacy'] }
+    };
+
+    html2pdf().from(element).set(opt).toPdf().get('pdf').then(function (pdf) {
+        const url = window.location.href;
+        const date = new Date().toLocaleString();
+        const text = `${url}\nData: ${date}`;
+        const pageHeight = pdf.internal.pageSize.height;
+        const textHeight = 10; 
+        let position = pageHeight - textHeight; 
+
+        pdf.setFont("helvetica", "italic");
+        pdf.setFontSize(10);
+        pdf.text(10, position, text);
+    }).save();
+}
+    </script>
+</body>
+
+</html>
