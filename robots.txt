@@ -3,4 +3,6 @@ Allow: /
 Disallow: /404
 Disallow: /pdf/
 Disallow: /artigo/
+Disallow: /img/
+Disallow: /style/
 Sitemap: https://basesnumericas.pages.dev/sitemap.xml
