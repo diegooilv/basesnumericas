@@ -306,6 +306,9 @@
         });
 
         function formatNumber(value, base) {
+            if (!value || typeof value !== 'string') {
+                return ""; 
+            }
 
             value = value.replace(/\W/g, "").toUpperCase();
 
@@ -334,6 +337,17 @@
             $("#base-8").val(formatNumber(octal, 8));
             $("#base-10").val(formatNumber(decimal, 10));
             $("#base-16").val(formatNumber(hexadecimal, 16));
+        });
+
+        document.addEventListener('keydown', function (event) {
+            if (event.ctrlKey && event.key === 'l') {
+                event.preventDefault();
+                document.getElementById('botaoLimpar').click();
+            }
+            if (event.ctrlKey && event.key === 'o') {
+                event.preventDefault();
+                document.getElementById('format-button').click();
+            }
         });
 
 
