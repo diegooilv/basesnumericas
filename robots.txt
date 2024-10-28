@@ -5,4 +5,5 @@ Disallow: /pdf/
 Disallow: /artigo/
 Disallow: /img/
 Disallow: /style/
+Disallow: /js_overview/
 Sitemap: https://basesnumericas.pages.dev/sitemap.xml
