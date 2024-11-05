@@ -1,39 +1,23 @@
-# Projeto Integrador I - Info II
+# Projeto Integrador I - Técnico em Informática - Info II
 
 Este projeto foi desenvolvido durante o segundo ano do curso Técnico em Informática Integrado ao Ensino Médio no Instituto Federal de Ciência e Educação - Campus Rolante.
 
-### Sobre o Projeto
+## Sobre o Projeto
 
-O projeto surgiu a partir de um debate sobre os conteúdos que mais nos chamaram a atenção. Assim, decidimos explorar o tema das bases numéricas, que foi abordado no primeiro ano do curso. O objetivo é criar um site que forneça informações sobre cada uma das bases, além de uma calculadora que converta valores entre diferentes bases.
+Inspirado em discussões sobre temas que despertaram maior interesse ao longo do curso, decidimos aprofundar o estudo das **bases numéricas**, um conteúdo explorado no primeiro ano. Este projeto visa criar um site informativo, explicando os diferentes tipos de bases numéricas e suas aplicações, além de oferecer uma **calculadora de conversão** que permite transformar valores entre as bases mais comuns.
 
-### Autores:
-- Diego
-- 
-- 
-- 
-- 
+### Funcionalidades
 
----
+- Informações detalhadas sobre as principais bases numéricas, como binária, octal, decimal e hexadecimal.
+- Calculadora interativa para converter valores entre diferentes bases numéricas.
+- Design responsivo para uma experiência de usuário intuitiva e acessível.
 
-## Sites
+### Objetivos de Aprendizagem
 
-### Links:
-- **[Site na Netlify](https://basesnumericas.netlify.app/)**
-- **[Site na Cloudflare Pages](https://basesnumericas.pages.dev/)** -> Utiliza um repositório próprio! [/basesnumericas](https://github.com/DiegoOilv/basesnumericas)
-- **[Site no Vercel Pages](https://basesnumericas.vercel.app/)** 
-- **[Site no GitHub Pages](https://diegooilv.github.io/Projeto-Integrador/)**
+- Consolidar o entendimento sobre bases numéricas e conversão entre elas.
+- Aprimorar habilidades de desenvolvimento web, incluindo front-end e back-end.
+- Praticar o uso de ferramentas de versionamento de código e integração contínua.
 
+## Deploy
 
----
-
-Abaixo, você pode verificar a situação dos nossos sites em diferentes servidores e domínios:
-
-[![Netlify Status](https://img.shields.io/website?style=for-the-badge&label=Netlify&down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fapp.netlify.com%2Fsites%2Fbasesnumericas%2Fdeploys)](https://app.netlify.com/sites/basesnumericas/deploys)
-
-[![Cloudflare Pages Status](https://img.shields.io/website?style=for-the-badge&label=Cloudflare%20Pages&down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fbasesnumericas.pages.dev)](https://basesnumericas.pages.dev)
-
-[![Vercel Status](https://img.shields.io/website?style=for-the-badge&label=Vercel&down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fbasesnumericas.vercel.app)](https://basesnumericas.vercel.app/)
-
-[![GitHub Pages Status](https://img.shields.io/website?style=for-the-badge&label=GitHub%20Pages&down_color=red&down_message=offline&up_color=green&up_message=online&url=https%3A%2F%2Fdiegooilv.github.io%2FProjeto-Integrador)](https://diegooilv.github.io/Projeto-Integrador)
-
----
+Este branch foi criado para o deploy do site na hospedagem [Netlify](https://www.netlify.com/), possibilitando o acesso público ao projeto.
