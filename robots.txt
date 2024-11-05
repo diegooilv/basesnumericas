@@ -1,9 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /404
-Disallow: /pdf/
-Disallow: /artigo/
-Disallow: /img/
-Disallow: /style/
-Disallow: /js_overview/
-Sitemap: https://basesnumericas.pages.dev/sitemap.xml
