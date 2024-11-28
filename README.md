@@ -16,13 +16,13 @@ O projeto surgiu a partir de um debate sobre os conteúdos que mais nos chamaram
 
 ## Autores
 <ul>
-    <li>Bernardo</li>
+    <li>Bernardo Silva Lacerda</li>
     <li>Cássio Ludwig</li>
     <li>Cássio Pazuch</li>
-    <li>Diego</li>
-    <li>Guilherme</li>
-    <li>Henrique</li>
-    <li>Vítor</li>
+    <li>Diego dos Santos de Oliveira</li>
+    <li>Guilherme David Nonnenmacher</li>
+    <li>Henrique de Lima</li>
+    <li>Vítor Hugo Both</li>
 </ul>
 
 ---
